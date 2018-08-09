@@ -89,6 +89,6 @@ Rails.application.configure do
    :user_name            => 'support@zonily.com',
    :password             => 'Zonily2018',
    :authentication       => "login",
-   :enable_starttls_auto => false
+   :enable_starttls_auto => true
   }
 end
