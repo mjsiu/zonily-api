@@ -9,7 +9,6 @@ class UserMailer < ApplicationMailer
 
  def contact_message(name:, email:, message:)
    @name = name
-   @email = email
    @message = message
 
    mail(to: email, subject: 'Thanks for contacting us')
