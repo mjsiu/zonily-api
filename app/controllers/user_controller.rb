@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   def newsletter
+    Newsletter.create(email: params[:email], active: true)
     UserMailer.welcome_email(email: params[:email]).deliver
     render status: 200
   end
