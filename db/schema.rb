@@ -10,14 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180826161656) do
+ActiveRecord::Schema.define(version: 20180909225239) do
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string "email"
+    t.boolean "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "playbooks", force: :cascade do |t|
+    t.string "company"
+    t.string "name"
+    t.boolean "active", default: false
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
     t.string "email"
     t.string "password"
-    t.boolean "newsletter", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

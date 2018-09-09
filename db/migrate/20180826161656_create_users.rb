@@ -5,8 +5,6 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :lastname
       t.string :email
       t.string :password
-      t.boolean :newsletter, default: false
-
       t.timestamps
     end
   end
