@@ -13,4 +13,12 @@ class UserMailer < ApplicationMailer
 
    mail(to: email, subject: 'Thanks for contacting us')
  end
+
+ def preorder_confirmation(name:, email:, playbook:)
+   @name = name
+   @message = message
+   @playbook = playbook
+
+   mail(to: email, subject: 'Zonily Playbook Purchase Confirmation')
+ end
 end
