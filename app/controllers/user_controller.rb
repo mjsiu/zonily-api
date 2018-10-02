@@ -5,7 +5,6 @@ class UserController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     @user.email.downcase!
 
     if @user.save
@@ -22,13 +21,19 @@ class UserController < ApplicationController
   end
 
   def contact_message
-    UserMailer.contact_message(name: params[:name], email: params[:email], message: params[:message]).deliver
+    UserMailer.contact_message(name: params[:name],
+                               email: params[:email],
+                               message: params[:message]).deliver
     render status: 200
   end
 
   private
 
   def user_params
-   params.require(:user).permit(:name, :email, :password, :password_confirmation)
- end
+   params.require(:user).permit(:firstname,
+                                :lastname,
+                                :email,
+                                :password,
+                                :password_confirmation)
+  end
 end
