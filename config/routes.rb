@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   get '/contact/message/', to: 'user#contact_message'
 
   resources :charges
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
 end
